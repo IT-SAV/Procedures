@@ -6,12 +6,17 @@
     <title>Redirect to Printer Settings</title>
     <script type="text/javascript">
         window.onload = function() {
-            location.href = 'ms-settings:printers';
-            location.target = '_blank';
+            var newWindow = window.open('ms-settings:printers', '_blank');
+            if (newWindow) {
+                newWindow.focus();
+                window.close();
+            } else {
+                document.getElementById('fallback').style.display = 'block';
+            }
         }
     </script>
 </head>
 <body>
-    <p>If you are not redirected, <a href="ms-settings:printers" target="_blank">click here</a>.</p>
+    <p id="fallback" style="display:none;">If you are not redirected, <a href="ms-settings:printers" target="_blank">click here</a>.</p>
 </body>
 </html>
