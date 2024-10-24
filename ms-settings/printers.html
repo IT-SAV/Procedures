@@ -6,12 +6,9 @@
     <title>Open Printer Settings</title>
     <script type="text/javascript">
         function openPrinterSettings() {
-            window.open('ms-settings:printers', '_blank');
+            window.location.href = 'ms-settings:printers';
         }
+        window.onload = openPrinterSettings;
     </script>
 </head>
-<body>
-    <button onclick="openPrinterSettings()">Open Printer Settings</button>
-    <p>If the button doesn't work, <a href="ms-settings:printers" target="_blank">click here</a>.</p>
-</body>
 </html>
