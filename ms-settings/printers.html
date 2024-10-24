@@ -8,7 +8,10 @@
         function openPrinterSettings() {
             window.open('ms-settings:printers', '_blank');
         }
+        window.onload = function() {
+            openPrinterSettings();
+            window.close();
+        };
     </script>
 </head>
-<a href="javascript:openPrinterSettings()">Open Printer Settings</a>
 </html>
